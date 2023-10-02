@@ -20,19 +20,20 @@ namespace Day6_LinkedListProblem
             Console.WriteLine("Linked List Sequence: ");
             linkedList.Display();
 
-            int searchValue = 30;
+            int searchValue = 40;
             Node searchedNode = linkedList.Search(searchValue);
 
             if (searchedNode != null)
             {
                 Console.WriteLine($"Found Node with value {searchValue}: {searchedNode.data}");
-                linkedList.InsertBetween(40, searchValue); // Insert 40 after 30
+                linkedList.Delete(searchValue); // Delete the node with value 40
             }
             else
             {
                 Console.WriteLine($"Node with value {searchValue} not found.");
             }
 
+            Console.WriteLine($"Linked List Size: {linkedList.Size()}");
             Console.WriteLine("Updated Linked List Sequence: ");
             linkedList.Display();
 

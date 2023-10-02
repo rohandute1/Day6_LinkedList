@@ -38,6 +38,14 @@ namespace Day6_LinkedListProblem
             }
         }
 
+        public void Pop()
+        {
+            if (head != null)
+            {
+                head = head.next;
+            }
+        }
+
         public void Display()
         {
             Node current = head;

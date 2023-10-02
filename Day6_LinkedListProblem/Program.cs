@@ -12,30 +12,14 @@ namespace Day6_LinkedListProblem
         {
             Console.WriteLine("Welcome to LinkedList Problems.");
 
-            LinkedList linkedList = new LinkedList();
-            linkedList.InsertBetween(56, int.MinValue); // Insert 56 at the beginning (before any other node)
-            linkedList.InsertBetween(70, 56); // Insert 70 after 56
-            linkedList.InsertBetween(30, 56); // Insert 30 between 56 and 70
+            SortedLinkedList<int> sortedList = new SortedLinkedList<int>();
+            sortedList.Add(56);
+            sortedList.Add(30);
+            sortedList.Add(40);
+            sortedList.Add(70);
 
-            Console.WriteLine("Linked List Sequence: ");
-            linkedList.Display();
-
-            int searchValue = 40;
-            Node searchedNode = linkedList.Search(searchValue);
-
-            if (searchedNode != null)
-            {
-                Console.WriteLine($"Found Node with value {searchValue}: {searchedNode.data}");
-                linkedList.Delete(searchValue); // Delete the node with value 40
-            }
-            else
-            {
-                Console.WriteLine($"Node with value {searchValue} not found.");
-            }
-
-            Console.WriteLine($"Linked List Size: {linkedList.Size()}");
-            Console.WriteLine("Updated Linked List Sequence: ");
-            linkedList.Display();
+            Console.WriteLine("Ordered Linked List Sequence: ");
+            sortedList.Display();
 
             Console.ReadLine();
         }

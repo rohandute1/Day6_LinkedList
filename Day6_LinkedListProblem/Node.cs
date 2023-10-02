@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Day6_LinkedListProblem
 {
-    class Node
+    class Node<T> where T : IComparable<T>
     {
-        public int data;
-        public Node next;
+        public T data;
+        public Node<T> next;
 
-        public Node(int data)
+        public Node(T data)
         {
             this.data = data;
             this.next = null;

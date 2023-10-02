@@ -6,90 +6,41 @@ using System.Threading.Tasks;
 
 namespace Day6_LinkedListProblem
 {
-    class LinkedList
+    class SortedLinkedList <T> where T : IComparable<T>
     {
-        private Node head;
-        private int size;
+        private Node<T> head;
 
-        public LinkedList()
+        public SortedLinkedList()
         {
             this.head = null;
-            this.size = 0;
         }
 
-        public void InsertBetween(int data, int previousData)
+        public void Add(T data)
         {
-            Node newNode = new Node(data);
-            if (head == null)
+            Node<T> newNode = new Node<T>(data);
+
+            if (head == null || data.CompareTo(head.data) < 0)
             {
+                newNode.next = head;
                 head = newNode;
             }
             else
             {
-                Node current = head;
-                while (current != null)
+                Node<T> current = head;
+
+                while (current.next != null && data.CompareTo(current.next.data) >= 0)
                 {
-                    if (current.data == previousData)
-                    {
-                        newNode.next = current.next;
-                        current.next = newNode;
-                        break;
-                    }
                     current = current.next;
                 }
-            }
-            size++;
-        }
 
-        public Node Search(int searchData)
-        {
-            Node current = head;
-            while (current != null)
-            {
-                if (current.data == searchData)
-                {
-                    return current;
-                }
-                current = current.next;
+                newNode.next = current.next;
+                current.next = newNode;
             }
-            return null; // Node with the specified value not found
-        }
-
-        public void Delete(int deleteData)
-        {
-            if (head == null)
-            {
-                return; // Empty list, nothing to delete
-            }
-
-            if (head.data == deleteData)
-            {
-                head = head.next;
-                size--;
-                return;
-            }
-
-            Node current = head;
-            while (current.next != null)
-            {
-                if (current.next.data == deleteData)
-                {
-                    current.next = current.next.next;
-                    size--;
-                    return;
-                }
-                current = current.next;
-            }
-        }
-
-        public int Size()
-        {
-            return size;
         }
 
         public void Display()
         {
-            Node current = head;
+            Node<T> current = head;
             while (current != null)
             {
                 Console.Write(current.data + "->");

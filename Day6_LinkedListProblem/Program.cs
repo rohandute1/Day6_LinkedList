@@ -13,9 +13,9 @@ namespace Day6_LinkedListProblem
             Console.WriteLine("Welcome to LinkedList Problems.");
 
             LinkedList linkedList = new LinkedList();
-            linkedList.Append(56);
-            linkedList.Append(30);
-            linkedList.Append(70);
+            linkedList.InsertBetween(56, int.MinValue); // Insert 56 at the beginning (before any other node)
+            linkedList.InsertBetween(70, 56); // Insert 70 after 56
+            linkedList.InsertBetween(30, 56); // Insert 30 between 56 and 70
 
             Console.WriteLine("Linked List Sequence: ");
             linkedList.Display();

@@ -15,7 +15,7 @@ namespace Day6_LinkedListProblem
             this.head = null;
         }
 
-        public void Append(int data)
+        public void InsertBetween(int data, int previousData)
         {
             Node newNode = new Node(data);
             if (head == null)
@@ -25,11 +25,16 @@ namespace Day6_LinkedListProblem
             else
             {
                 Node current = head;
-                while (current.next != null)
+                while (current != null)
                 {
+                    if (current.data == previousData)
+                    {
+                        newNode.next = current.next;
+                        current.next = newNode;
+                        break;
+                    }
                     current = current.next;
                 }
-                current.next = newNode;
             }
         }
 

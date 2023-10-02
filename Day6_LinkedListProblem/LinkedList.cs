@@ -15,7 +15,7 @@ namespace Day6_LinkedListProblem
             this.head = null;
         }
 
-        public void Add(int data)
+        public void Append(int data)
         {
             Node newNode = new Node(data);
             if (head == null)
@@ -24,8 +24,12 @@ namespace Day6_LinkedListProblem
             }
             else
             {
-                newNode.next = head;
-                head = newNode;
+                Node current = head;
+                while (current.next != null)
+                {
+                    current = current.next;
+                }
+                current.next = newNode;
             }
         }
 
@@ -34,10 +38,10 @@ namespace Day6_LinkedListProblem
             Node current = head;
             while (current != null)
             {
-                Console.Write(current.data + " ");
+                Console.Write(current.data + "->");
                 current = current.next;
             }
-            Console.WriteLine();
+            Console.WriteLine("null");
         }
     }
 }

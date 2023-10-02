@@ -13,9 +13,9 @@ namespace Day6_LinkedListProblem
             Console.WriteLine("Welcome to LinkedList Problems.");
 
             LinkedList linkedList = new LinkedList();
-            linkedList.Add(70);
-            linkedList.Add(30);
-            linkedList.Add(56);
+            linkedList.Append(56);
+            linkedList.Append(30);
+            linkedList.Append(70);
 
             Console.WriteLine("Linked List Sequence: ");
             linkedList.Display();

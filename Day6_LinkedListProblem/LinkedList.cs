@@ -38,12 +38,25 @@ namespace Day6_LinkedListProblem
             }
         }
 
-        public void Pop()
+        public void PopLast()
         {
-            if (head != null)
+            if (head == null)
             {
-                head = head.next;
+                return; // Empty list, nothing to remove
             }
+
+            if (head.next == null)
+            {
+                head = null; // List has only one element
+                return;
+            }
+
+            Node current = head;
+            while (current.next.next != null)
+            {
+                current = current.next;
+            }
+            current.next = null;
         }
 
         public void Display()

@@ -20,8 +20,8 @@ namespace Day6_LinkedListProblem
             Console.WriteLine("Linked List Sequence: ");
             linkedList.Display();
 
-            Console.WriteLine("After popping the first element:");
-            linkedList.Pop(); // Delete the first element
+            Console.WriteLine("After popping the last element:");
+            linkedList.PopLast(); // Delete the last element
 
             Console.WriteLine("Updated Linked List Sequence: ");
             linkedList.Display();

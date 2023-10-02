@@ -38,25 +38,18 @@ namespace Day6_LinkedListProblem
             }
         }
 
-        public void PopLast()
+        public Node Search(int searchData)
         {
-            if (head == null)
-            {
-                return; // Empty list, nothing to remove
-            }
-
-            if (head.next == null)
-            {
-                head = null; // List has only one element
-                return;
-            }
-
             Node current = head;
-            while (current.next.next != null)
+            while (current != null)
             {
+                if (current.data == searchData)
+                {
+                    return current;
+                }
                 current = current.next;
             }
-            current.next = null;
+            return null; // Node with the specified value not found
         }
 
         public void Display()

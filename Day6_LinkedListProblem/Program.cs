@@ -20,11 +20,17 @@ namespace Day6_LinkedListProblem
             Console.WriteLine("Linked List Sequence: ");
             linkedList.Display();
 
-            Console.WriteLine("After popping the last element:");
-            linkedList.PopLast(); // Delete the last element
+            int searchValue = 30;
+            Node searchedNode = linkedList.Search(searchValue);
 
-            Console.WriteLine("Updated Linked List Sequence: ");
-            linkedList.Display();
+            if (searchedNode != null)
+            {
+                Console.WriteLine($"Found Node with value {searchValue}: {searchedNode.data}");
+            }
+            else
+            {
+                Console.WriteLine($"Node with value {searchValue} not found.");
+            }
 
             Console.ReadLine();
         }

@@ -13,11 +13,11 @@ namespace Day6_LinkedListProblem
             Console.WriteLine("Welcome to LinkedList Problems.");
 
             LinkedList linkedList = new LinkedList();
-            linkedList.Add(56);
-            linkedList.Add(30);
             linkedList.Add(70);
+            linkedList.Add(30);
+            linkedList.Add(56);
 
-            Console.WriteLine("Linked List: ");
+            Console.WriteLine("Linked List Sequence: ");
             linkedList.Display();
 
             Console.ReadLine();

@@ -24,12 +24,8 @@ namespace Day6_LinkedListProblem
             }
             else
             {
-                Node current = head;
-                while (current.next != null)
-                {
-                    current = current.next;
-                }
-                current.next = newNode;
+                newNode.next = head;
+                head = newNode;
             }
         }
 

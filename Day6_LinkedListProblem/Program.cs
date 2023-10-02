@@ -26,11 +26,15 @@ namespace Day6_LinkedListProblem
             if (searchedNode != null)
             {
                 Console.WriteLine($"Found Node with value {searchValue}: {searchedNode.data}");
+                linkedList.InsertBetween(40, searchValue); // Insert 40 after 30
             }
             else
             {
                 Console.WriteLine($"Node with value {searchValue} not found.");
             }
+
+            Console.WriteLine("Updated Linked List Sequence: ");
+            linkedList.Display();
 
             Console.ReadLine();
         }
